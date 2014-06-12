@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8">
+
+		<title>makeScroll: Simple jQuery plugin that allow you to create a custom scrollbar</title>
+		
+		<!-- local resources -->
+        <link rel="stylesheet" href="css/jquery-theme/jquery-ui-1.10.4.custom.min.css">                
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
+
+		<!-- make scroller plugin -->
+		<script type="text/javascript" src="js/jquery.makeScroller.js"></script>
+        <style type="text/css">
+            .content { 
+                width: 250px; 
+                float:left; 
+                height:300px;
+                border:1px solid; 
+            }
+            
+            .debug { min-height: 30px; float: left; padding-right: 10px; }
+            .debug.label { font-weight: bold; width: 100px;}
+            .clear { clear: both; }
+        </style>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+				$("#ts")
+					// add some text
+					.html("<div class=\"ds\"><hr>start<hr>" + Array(150).join("scroll me baby<br>") + "<hr>end<hr></div>")
+					// call the magic method
+					.makeScroll();		
+            });
+        </script>
+
+    </head>
+    <body>
+        <h3>makeScroll: Simple jQuery plugin that allow you to create a custom scrollbar</h3>
+		<hr />
+		
+		<!-- debug stuff (start) -->
+        <div class="debug label">heights</div><div class="debug" id="debug_heights"></div>
+        <div class="clear"></div>
+        <div class="debug label">scrool mode</div><div class="debug" id="debug_scroll_mode"></div>
+        <div class="clear"></div>
+		<div class="debug label">factor</div><div class="debug" id="debug_factor"></div>
+        <div class="clear"></div>
+		<!-- debug stuff (end) -->
+
+        <div id="element">
+			<!-- this is the mailn container -->
+            <div class="content">
+				<!-- this is the the target scrollable element -->
+				<div id="ts"></div>
+            </div>
+        </div>
+    </body>
+</html>
