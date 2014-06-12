@@ -19,3 +19,8 @@ For browser compatibility I've tested the following browser
 * Google Chrome
 * Internet Explorer 9
 * Safari 5.1.7 (for windows)
+
+Demo
+==========
+You can see a working demo at:
+http://htmlpreview.github.io/?https://github.com/webga/makeScroll/blob/master/index.html
