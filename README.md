@@ -1,7 +1,7 @@
 makeScroll
 ==========
 
-Simple jQuery plugin that allow you to create a custom scrollbar
+The simplest jQuery plugin that allow you to create a custom scrollbar
 
 How it works
 ==========
