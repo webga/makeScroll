@@ -3,58 +3,76 @@
     <head>
         <meta charset="utf-8">
 
-		<title>makeScroll: Simple jQuery plugin that allow you to create a custom scrollbar</title>
+		<title>makeScroll: The simplest jQuery plugin that allow you to create a custom scrollbar - by webga</title>
 		
-		<!-- local resources -->
+		<!-- jquery -->
         <link rel="stylesheet" href="css/jquery-theme/jquery-ui-1.10.4.custom.min.css">                
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
 
-		<!-- make scroller plugin -->
-		<script type="text/javascript" src="js/jquery.makeScroller.js"></script>
-        <style type="text/css">
-            .content { 
-                width: 250px; 
-                float:left; 
-                height:300px;
-                border:1px solid; 
-            }
-            
-            .debug { min-height: 30px; float: left; padding-right: 10px; }
-            .debug.label { font-weight: bold; width: 100px;}
-            .clear { clear: both; }
-        </style>
+		<!-- makeScroll plugin -->
+		<script type="text/javascript" src="js/jquery.makeScroll-debug.js"></script>
 
+		<!-- local resources -->
+        <link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="js/scripts.js"></script>
+		
         <script type="text/javascript">
             $(document).ready(function () {
 				$("#ts")
 					// add some text
-					.html("<div class=\"ds\"><hr>start<hr>" + Array(150).join("scroll me baby<br>") + "<hr>end<hr></div>")
+					.html("<div class=\"ds\"><hr>start<hr>" + Array(10).join(getParagraph()) + "<hr>end<hr></div>")
 					// call the magic method
-					.makeScroll();		
+					.makeScroll();
             });
         </script>
 
     </head>
     <body>
-        <h3>makeScroll: Simple jQuery plugin that allow you to create a custom scrollbar</h3>
-		<hr />
-		
-		<!-- debug stuff (start) -->
-        <div class="debug label">heights</div><div class="debug" id="debug_heights"></div>
-        <div class="clear"></div>
-        <div class="debug label">scrool mode</div><div class="debug" id="debug_scroll_mode"></div>
-        <div class="clear"></div>
-		<div class="debug label">factor</div><div class="debug" id="debug_factor"></div>
-        <div class="clear"></div>
-		<!-- debug stuff (end) -->
+		<div id="page">
+			<h1>makeScroll</h1>
+			<h3>The simplest jQuery plugin that allow you to create a custom scrollbar</h3>
+			
+			<!-- debug stuff (start) -->
+			<div class="debug-contnet">
+				<div class="debug label">heights</div><div class="debug" id="debug_heights"></div>
+				<div class="clear"></div>
+				<div class="debug label">scrool mode</div><div class="debug" id="debug_scroll_mode"></div>
+				<div class="clear"></div>
+				<div class="debug label">factor</div><div class="debug" id="debug_factor"></div>
+				<div class="clear"></div>
+			</div>
+			<!-- debug stuff (end) -->
 
-        <div id="element">
-			<!-- this is the mailn container -->
-            <div class="content">
-				<!-- this is the the target scrollable element -->
-				<div id="ts"></div>
-            </div>
-        </div>
+			<h3>Options:</h3>
+			<div class="options">
+				<label>content height:</label> <a class="ih" href="#">100px</a> <a class="ih" href="#">200px</a> <a class="ih" href="#">300px</a> <a class="ih" href="#">500px</a>
+			</div>
+			<div class="options">
+				<label>sentence repeat:</label> <a class="iw" href="#">1</a> <a class="iw" href="#">10</a> <a class="iw" href="#">150</a> <a class="iw" href="#">2500</a>
+			</div>
+			
+			<div id="element">
+				<h1>Bart the Daredevil</h1>
+				<!-- this is the main container -->
+				<div class="content">
+					<!-- this is the the target scrollable element -->
+					<div id="ts">
+						<p>Kids, kids. I'm not going to die. That only happens to bad people. Thank you, steal again. Our differences are only skin deep, but our sames go down to the bone. Look out, Itchy! He's Irish! What good is money if it can't inspire terror in your fellow man? Old people don't need companionship. They need to be isolated and studied so it can be determined what nutrients they have that might be extracted for our personal use.</p>			
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+			
+			<div>
+				<p style="text-align:left; font-size:12px; padding:10px;">
+					<b>Note:</b> the <a href="https://github.com/webga/makeScroll/blob/master/index.html">index.html</a> file inclute the <a href="https://github.com/webga/makeScroll/blob/master/js/jquery.makeScroll-debug.js">jquery.makeScroll-debug.js</a> version, that is used only in this file for display in page the details you can see in the gray box.<br />
+					For production usage, please use the <a href="https://github.com/webga/makeScroll/blob/master/js/jquery.makeScroll.js">jquery.makeScroll.js</a> file
+				</p>
+				<p style="text-align:center; padding:10px;">
+					makeScroll by <a href="https://github.com/webga">webga</a> - <a href="https://github.com/webga/makeScroll/">Fork me</a> on GitHub
+				</p>
+			</div>
+		</div>
     </body>
 </html>
